@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gate>
+	<name>Ucell</name>
+	<caption>Ucell</caption>
+	<type>SMS</type>
+	<class>HTTP</class>
+	<version>4</version>
+	<priority>10</priority>
+	<country>Узбекистан</country>
+	<prefixlist>
+		<prefix start="+998 93" format="3.2.7"/>
+	</prefixlist>
+	<info>
+		<maxsymbols>141</maxsymbols>
+		<maxunicodesymbols>141</maxunicodesymbols>
+		<supportflash>0</supportflash>
+		<supportdtdelivery>0</supportdtdelivery>
+		<supportunicode>1</supportunicode>
+@@ -28,15 +28,15 @@
+		<postdata>eval(
+					begin
+						PostData.Add('act','3');
+						PostData.Add('Prefix', SMS['Phone_Country'] + SMS['Phone_Def']);
+						PostData.Add('Subscriber',SMS['Phone_Number']);
+						PostData.Add('gmess',SMS['Text']);
+						PostData.Add('gip', Html.RegExp('name=&quot;gip&quot; value=&quot;(.*?)&quot;', 1));
+						PostData.Add('Count','1');
+						PostData.Add('askod1',SMS['Code']);
+						PostData.Add('askod',Html.RegExp('name="askod" value="(.*?)&quot;',1));
+						PostData.Add('translit', '');
+						PostData.Add('mlength', VarToStr(141 - Length(SMS['Text'])));
+						PostData.Add('gsend','Отправить');
+					end;
+					)
